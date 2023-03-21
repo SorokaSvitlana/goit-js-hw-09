@@ -13,7 +13,6 @@ const refs = {
 
 refs.startBtn.disabled = true;
 
-
 const options = {
     enableTime: true,
     time_24hr: true,
@@ -61,10 +60,10 @@ function addLeadingZero(value) {
 
 function onStartTimer() {
     let timer = setInterval(() => {
-        checkedDate = new Date(refs.inputDate.value) - new Date();
+        let checkedDate = new Date(refs.inputDate.value) - new Date();
         refs.startBtn.disabled = true;
-        if (chakedDate >= 0) {
-            let timeObject = convertMs(chakedDate);
+        if (checkedDate >= 0) {
+            let timeObject = convertMs(checkedDate);
             refs.timerDays.textContent = addLeadingZero(timeObject.days);
             refs.timerHours.textContent = addLeadingZero(timeObject.hours);
             refs.timerMins.textContent = addLeadingZero(timeObject.minutes);

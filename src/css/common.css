@@ -16,3 +16,106 @@ img {
   display: block;
   max-width: 100%;
 }
+
+/* КОЛЬОРИ */
+.color__btn {
+  margin-top: 20px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+}
+.color__btn-start {
+  background-color: #3498db;
+}
+.color__btn-stop {
+  background-color: #f00;
+}
+
+/* ТАЙМЕР */
+.timer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3rem;
+  font-size: 4rem;
+}
+  .field {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 1.5rem;
+}
+
+.value {
+  background-color: #c0c0c0;
+  color: #fff;
+  padding: 1rem 2rem;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+.label {
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.timer__input {
+  padding: 0.5rem;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+  margin-right: 1rem;
+}
+
+.timer__btn {
+  background-color: #008080;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 2rem;
+  border-radius: 5px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+
+/* ПРОМІСИ */
+.form {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.form input {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  color: #333;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.form button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: #fff;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}

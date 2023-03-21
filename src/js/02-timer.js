@@ -61,7 +61,7 @@ function addLeadingZero(value) {
 
 function onStartTimer() {
     let timer = setInterval(() => {
-        let chakedDate = new Date(text.value) - new Date();
+        checkedDate = new Date(refs.inputDate.value) - new Date();
         refs.startBtn.disabled = true;
         if (chakedDate >= 0) {
             let timeObject = convertMs(chakedDate);

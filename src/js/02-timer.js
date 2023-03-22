@@ -18,8 +18,8 @@ const options = {
     time_24hr: true,
     defaultDate: new Date(),
     minuteIncrement: 1,
-    onClose(selectedDates) {
-        if (selectedDates[0] < new Date()) {
+    onClose([selectedDates]) {
+        if (selectedDates < Date.now()) {
             Notiflix.Notify.failure('Please choose a date in the future');
             refs.startBtn.disabled = true;
         } else {
@@ -60,15 +60,20 @@ function addLeadingZero(value) {
 
 function onStartTimer() {
     let timer = setInterval(() => {
-        let checkedDate = new Date(refs.inputDate.value) - new Date();
+        let checkedDate = new Date(refs.inputDate.value) - Date.now();
         refs.startBtn.disabled = true;
         if (checkedDate >= 0) {
             let timeObject = convertMs(checkedDate);
-            refs.timerDays.textContent = addLeadingZero(timeObject.days);
-            refs.timerHours.textContent = addLeadingZero(timeObject.hours);
-            refs.timerMins.textContent = addLeadingZero(timeObject.minutes);
-            refs.timerSec.textContent = addLeadingZero(timeObject.seconds);
+            setTimerValues(refs, timeObject)
         } else {
             clearInterval(timer);
         }
     }, 1000); }
+
+    function setTimerValues(refs, timeObject) {
+        refs.timerDays.textContent = addLeadingZero(timeObject.days);
+        refs.timerHours.textContent = addLeadingZero(timeObject.hours);
+        refs.timerMins.textContent = addLeadingZero(timeObject.minutes);
+        refs.timerSec.textContent = addLeadingZero(timeObject.seconds);
+      }
+      
